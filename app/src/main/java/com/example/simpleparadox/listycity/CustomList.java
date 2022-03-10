@@ -19,8 +19,8 @@ public class CustomList extends ArrayAdapter<City> {
     private ArrayList<City> cities;
     private Context context;
 
-    public CustomList(Context context, ArrayList<City> cities){
-        super(context,0, cities);
+    public CustomList(Context context, ArrayList<City> cities) {
+        super(context, 0, cities);
         this.cities = cities;
         this.context = context;
     }
@@ -32,8 +32,8 @@ public class CustomList extends ArrayAdapter<City> {
 //        return super.getView(position, convertView, parent);
         View view = convertView;
 
-        if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.content, parent,false);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         }
 
         City city = cities.get(position);
@@ -55,6 +55,16 @@ public class CustomList extends ArrayAdapter<City> {
 
     public void addCity(City city) {
         cities.add(city);
+    }
+
+
+    public boolean hasCity(City city) {
+        for (int i = 0; i < cities.size(); i++) {
+            if (cities.get(i) == city) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

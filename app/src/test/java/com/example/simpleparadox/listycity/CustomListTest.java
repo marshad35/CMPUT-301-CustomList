@@ -23,15 +23,15 @@ public class CustomListTest {
     }
 
     @Test
-    public void hasCityTest(City city){
-        list.addCity(city);
-        for(int i =0;i < list.getCount();i++){
-            if(list.getItem(i) == city){
-                assertEquals(0,0);
-            }
-        }
+    public void hasCityTest(){
+        City newCity = new City("vancouver", "bc");
+        list.addCity(newCity);
+        assertEquals(true,list.hasCity(newCity));
+
+
+
     }
-    
+
 
 
 
