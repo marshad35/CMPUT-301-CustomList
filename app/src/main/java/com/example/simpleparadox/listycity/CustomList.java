@@ -74,6 +74,10 @@ public class CustomList extends ArrayAdapter<City> {
             throw new IllegalArgumentException();
         }
     }
+    public int countCities(){
+
+        return 0;
+    }
 
 
 
